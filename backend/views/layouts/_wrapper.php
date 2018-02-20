@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Maxim Tyugaev <tugmaks@yandex.ru>
+ */
 
 use yii\base\View;
 

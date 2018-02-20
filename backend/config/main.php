@@ -12,7 +12,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
-    'layout'=>'@backend/views/layouts/adminlte.php',
+    'container'=> require_once(__DIR__ . '/container.php'),
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',

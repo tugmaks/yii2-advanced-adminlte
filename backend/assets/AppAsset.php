@@ -3,6 +3,8 @@
 namespace backend\assets;
 
 use yii\web\AssetBundle;
+use Tugmaks\AdminLTE\Assets\AdminLteAsset;
+use yii\web\YiiAsset;
 
 /**
  * Main backend application asset bundle.
@@ -10,14 +12,9 @@ use yii\web\AssetBundle;
 class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
-    public $baseUrl = '@web';
-    public $css = [
+    public $baseUrl  = '@web';
+    public $css      = [
         'css/site.css',
     ];
-    public $js = [
-    ];
-    public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
-    ];
+    public $depends  = [YiiAsset::class, AdminLteAsset::class];
 }

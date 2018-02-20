@@ -1,7 +1,7 @@
 {
-    "name": "yiisoft/yii2-app-advanced",
+    "name": "tugmaks/yii2-advanced-adminlte",
     "description": "Yii 2 Advanced Project Template",
-    "keywords": ["yii2", "framework", "advanced", "project template"],
+    "keywords": ["yii2", "framework", "advanced", "project template", "AdminLTE"],
     "homepage": "http://www.yiiframework.com/",
     "type": "project",
     "license": "BSD-3-Clause",
@@ -18,7 +18,7 @@
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "tugmaks/yii2-adminlte-assets": "dev-master"
+        "tugmaks/yii2-adminlte-assets": "0.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -37,10 +37,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "vcs",
-            "url":  "git@bitbucket.org:tugmaks/yii2-adminlte-assets.git"
         }
     ]
 }

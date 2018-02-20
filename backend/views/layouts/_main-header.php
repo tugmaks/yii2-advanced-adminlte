@@ -1,6 +1,10 @@
 <?php
+/**
+ * @author Maxim Tyugaev <tugmaks@yandex.ru>
+ */
 
 use yii\base\View;
+use yii\helpers\Html;
 
 /**
  * @var View $this View object itself
@@ -41,7 +45,7 @@ use yii\base\View;
                                 <li><!-- start message -->
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="../../dist/img/user2-160x160.jpg" class="img-circle"
+                                            <img src="https://www.gravatar.com/avatar/<?= md5( strtolower( trim( \Yii::$app->user->identity->email) ) )?>&s=160" class="img-circle"
                                                  alt="User Image">
                                         </div>
                                         <h4>
@@ -115,16 +119,16 @@ use yii\base\View;
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <img src="https://www.gravatar.com/avatar/<?= md5( strtolower( trim( \Yii::$app->user->identity->email) ) )?>&s=160" class="user-image" alt="User Image">
+                        <span class="hidden-xs"><?=\Yii::$app->user->identity->username?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="https://www.gravatar.com/avatar/<?= md5( strtolower( trim( \Yii::$app->user->identity->email) ) )?>&s=160" class="img-circle" alt="User Image">
 
                             <p>
-                                Alexander Pierce - Web Developer
+                                <?=\Yii::$app->user->identity->username?> - Web Developer
                                 <small>Member since Nov. 2012</small>
                             </p>
                         </li>
@@ -149,7 +153,11 @@ use yii\base\View;
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                <?= Html::a(
+                                    'Logout',
+                                    ['/site/logout'],
+                                    ['class' => 'btn btn-default btn-flat', 'data' => ['method' => 'post']]
+                                ) ?>
                             </div>
                         </li>
                     </ul>
